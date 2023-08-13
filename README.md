@@ -18,17 +18,15 @@ used as input.
 
 #### input ####
 
-heatmap = chromosome sparse matrix .npz in input_heatmaps directory
-domains = domain calls bed file in input_bed directory
-chromosome = chromosome of plot
-start = start coordinate of plot
-end = end coordinate of plot
-max_color = maximum color of plot
-
-output placed in output/
-
+heatmap = chromosome sparse matrix .npz in input_heatmaps directory     
+domains = domain calls bed file in input_bed directory     
+chromosome = chromosome of plot      
+start = start coordinate of plot     
+end = end coordinate of plot      
+max_color = maximum color of plot     
 
 #### Output ####
+output placed in output/ subdirectory    
 *{domains}*'_' + args.chr  + '_' + str(start)  + '_' + str(end) + '_' +  str(args.max_color) + '.png'
 
 
