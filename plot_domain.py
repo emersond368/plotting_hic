@@ -31,10 +31,15 @@ def main():
     domains_chrom_list = domains[args.chr]
     print(domains_chrom_list)
 
+    
+    #slice section of matrix based on resolution 
     matrix = matrix_pre_csr[int(args.start/args.resolution):int(args.end/args.resolution),int(args.start/args.resolution):int(args.end/args.resolution)].todense()
     some_square_matrix = np.triu(matrix) + np.triu(matrix).T - np.diag(np.diag(matrix))
 
+    #set up heatmap object h
     h = ExtendableHeatmap(array=some_square_matrix,grange_x={'chrom': args.chr, 'start': args.start,'end': args.end},colorscale=(0, args.max_color),colormap='Reds')
+ 
+    #add domain
     h.outline_domains(domains_chrom_list,color='green')
 
     h.save("output/plots_" + args.domains[:-4] + '_' + args.chr  + '_' + str(args.start)  + '_' + str(args.end) + '_' +  str(args.max_color) + '.png')

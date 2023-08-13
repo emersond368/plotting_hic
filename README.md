@@ -11,7 +11,8 @@ sh setup_venv.sh
 ### Step 1 ###
 plotting example for domain calls on heatmap:
 
-sh plot_domain.sh (run plot_domain.py)    
+run plot_domain.py    
+(example input provided in plot_domain.sh. Run as "sh plot_domain.sh")    
 
 Prior to running this code raw Hi-C matrices should be balanced. Chromosome balanced sparse matrix is
 used as input.   
@@ -23,6 +24,7 @@ domains = domain calls bed file in input_bed directory
 chromosome = chromosome of plot      
 start = start coordinate of plot     
 end = end coordinate of plot      
+resolution = resolution basepair of heatmap   
 max_color = maximum color of plot     
 
 #### Output ####
